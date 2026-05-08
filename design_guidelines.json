@@ -1,0 +1,134 @@
+{
+  "brand_name": "ICELAB",
+  "domain": "Luxury Beverage / Hospitality Marketing Site",
+  "theme": "dark",
+  "archetype": "Archetype 5 (Jewel & Luxury) with Cinematic Editorial twist",
+  "design_philosophy": {
+    "core_principles": [
+      "Cinematic Lighting: Use deep voids and subtle ice-blue neon glows (like spotlights on ice) rather than flat gradients.",
+      "Editorial Grid Layouts: High whitespace, generous margins, asymmetric 'Tetris' bento layouts to showcase products like art pieces.",
+      "Optical Clarity: Glassmorphism should feel like milled crystal, heavily blurred but visually sharp on the edges.",
+      "Invisible Yet Extraordinary: Use minimalist line-based iconography and stark geometric typography."
+    ],
+    "forbidden_patterns": [
+      "No generic full-screen flat gradients.",
+      "No Inter, Roboto, or standard sans-serif for headings (use Outfit).",
+      "Avoid pure black backgrounds (#000000); strictly use the requested navy/black #0E1726."
+    ]
+  },
+  "colors": {
+    "background": "#0E1726",
+    "foreground": "#FFFFFF",
+    "primary": "#8BD7FF",
+    "primary_hover": "#AEE6FF",
+    "secondary": "#3A8DFF",
+    "secondary_hover": "#63AFFF",
+    "surface": "#162338",
+    "surface_glass": "rgba(22, 35, 56, 0.4)",
+    "border": "#243754",
+    "muted": "#8BA1C1",
+    "glow": "0 0 20px rgba(139, 215, 255, 0.15)"
+  },
+  "typography": {
+    "font_families": {
+      "heading": "'Outfit', sans-serif",
+      "body": "'Montserrat', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "hierarchy": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl font-light tracking-tighter uppercase",
+      "h2": "text-3xl md:text-4xl lg:text-5xl font-light tracking-tight",
+      "h3": "text-xl md:text-2xl font-normal tracking-wide",
+      "body": "text-base md:text-lg text-muted font-light leading-relaxed",
+      "overline": "text-xs md:text-sm uppercase tracking-[0.2em] font-medium text-primary"
+    }
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-24 md:py-32",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8 lg:gap-12",
+    "bento_items": {
+      "hero_span": "col-span-full md:col-span-8 row-span-2",
+      "tall_span": "col-span-full md:col-span-4 row-span-2"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-[#0E1726] hover:bg-primary_hover font-medium px-8 py-4 rounded-none transition-all duration-300",
+      "outline": "border border-border text-foreground hover:bg-surface hover:border-primary px-8 py-4 rounded-none transition-all duration-300",
+      "ghost": "text-primary hover:text-primary_hover uppercase tracking-widest text-sm"
+    },
+    "cards": {
+      "default": "bg-surface border border-border p-8 hover:-translate-y-1 transition-transform duration-500",
+      "glass": "bg-surface_glass backdrop-blur-2xl border border-white/10 p-8 shadow-2xl"
+    },
+    "navigation": {
+      "header": "fixed top-0 w-full z-50 bg-[#0E1726]/80 backdrop-blur-xl border-b border-border transition-all duration-300",
+      "links": "text-sm uppercase tracking-widest hover:text-primary transition-colors"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "stroke_width": 1.5,
+      "style": "minimalist line-based"
+    }
+  },
+  "motion": {
+    "page_load": "fade-in with subtle upward translation (duration-1000 ease-out)",
+    "scroll_reveal": "staggered fade-up for bento grid children (framer-motion whileInView)",
+    "hover_effects": "slow, cinematic scale-up (scale-105 duration-700) for images"
+  },
+  "media_assets": {
+    "hero": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/c722b6d0-e96a-4482-92ab-5e24cb60d553/images/28ef96cd89af584a480b8d40511f65ca842a2e6a8206e01de28201751500b17b.png",
+      "alt": "Perfectly clear invisible ice cube",
+      "usage": "Main hero background, use bg-black/40 overlay to ensure text contrast"
+    },
+    "products": [
+      {
+        "name": "Ice Cube",
+        "url": "https://images.unsplash.com/photo-1767541865141-e4abf72e9dbc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb2NrdGFpbCUyMGNsZWFyJTIwaWNlfGVufDB8fHx8MTc3ODIyNzgxOHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Classic large clear ice cube"
+      },
+      {
+        "name": "Ice Ball",
+        "url": "https://static.prod-images.emergentagent.com/jobs/c722b6d0-e96a-4482-92ab-5e24cb60d553/images/396da9905a5278b9ae713c16eaca7104dbb11dfe48b814459b8cd381eeb284bf.png",
+        "alt": "Perfect spherical ice ball"
+      },
+      {
+        "name": "Ice Spear",
+        "url": "https://static.prod-images.emergentagent.com/jobs/c722b6d0-e96a-4482-92ab-5e24cb60d553/images/2f3770114e22f1a6a16d5f40789e189a2afd49724ecfe41bc984ff814f4e0023.png",
+        "alt": "Tall clear ice spear for highball glasses"
+      },
+      {
+        "name": "Infused Ice",
+        "url": "https://static.prod-images.emergentagent.com/jobs/c722b6d0-e96a-4482-92ab-5e24cb60d553/images/8eab0dc505136dc4d35d341f97e67bf8ea2b2ed75730d9cba81fc07498de03d4.png",
+        "alt": "Artisan ice infused with botanicals"
+      }
+    ],
+    "environments": [
+      {
+        "url": "https://images.unsplash.com/photo-1767022724924-993b00fc04b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwYmFyJTIwaW50ZXJpb3IlMjBkYXJrfGVufDB8fHx8MTc3ODIyNzgxOHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Premium dark bar interior",
+        "usage": "Background for Testimonials or Process section"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1777791375148-5d568498cec2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHxwcmVtaXVtJTIwYmFyJTIwaW50ZXJpb3IlMjBkYXJrfGVufDB8fHx8MTc3ODIyNzgxOHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Assortment of luxury liquor on dark counter",
+        "usage": "About Section image"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the color palette requested: Deep Navy/Black (#0E1726) for background, White (#FFFFFF) for text, and Ice Blue (#8BD7FF, #3A8DFF) for glowing highlights.",
+    "Do NOT use pure black backgrounds or generic gray cards. Utilize the provided 'surface' hex codes and border colors.",
+    "Do NOT use 'Inter' for headings. Use 'Outfit' for titles and 'Montserrat' for body.",
+    "Implement the 'Bento Grid' strategy for the Product Showcase section. Ditch perfectly symmetric grids for asymmetric overlaps.",
+    "Implement high whitespace. Use py-24 or py-32 for section padding.",
+    "CRITICAL: Include `data-testid` on all interactive elements (e.g., `data-testid=\"contact-submit-button\"`, `data-testid=\"nav-link-products\"`).",
+    "Hero Section Overlay: Do NOT blank out the hero image completely. Use `bg-[#0E1726]/40` overlay or a gradient to keep the invisible ice image visible while text remains readable.",
+    "Use framer-motion or similar for subtle scroll reveals. The site must feel cinematic and expensive.",
+    "Implement a dedicated Process/Craftsmanship section and a Testimonials section as requested in user choices.",
+    "For components, stick strictly to HTML + Tailwind instead of heavily reliant Shadcn cards for the main marketing pages. Standard forms for Contact are fine.",
+    "Load Google Fonts 'Outfit' and 'Montserrat' in the index.html or global layout."
+  ]
+}
