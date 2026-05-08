@@ -92,7 +92,6 @@ export const Products = () => {
           transition={{ duration: 0.7 }}
           className="flex items-center gap-3 mb-8"
         >
-          <span className="block w-10 h-px bg-ice-primary" />
           <p className="overline">The Collection — 02</p>
         </motion.div>
 

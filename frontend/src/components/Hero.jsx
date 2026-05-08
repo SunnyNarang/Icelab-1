@@ -91,7 +91,6 @@ export const Hero = () => {
             className="flex items-center gap-4 mb-10"
             data-testid="hero-overline"
           >
-            <span className="block w-10 h-px bg-ice-primary" />
             <p className="overline !text-white/85">
               ICELAB · Invisible Luxury
             </p>

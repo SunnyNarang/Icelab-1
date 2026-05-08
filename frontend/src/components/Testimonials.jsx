@@ -37,7 +37,6 @@ export const Testimonials = () => {
             transition={{ duration: 0.7 }}
             className="overline mb-8"
           >
-            <span className="inline-block w-8 h-px bg-ice-primary align-middle mr-3" />
             Stories — 05
           </motion.p>
           <motion.h2
