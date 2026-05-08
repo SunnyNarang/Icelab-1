@@ -13,7 +13,7 @@ export const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40 border-t border-ice-border"
+      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40"
       data-testid="testimonials-section"
     >
       <div

@@ -69,7 +69,7 @@ export const Products = () => {
   return (
     <section
       id="products"
-      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40 border-t border-ice-border overflow-hidden"
+      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40 overflow-hidden"
       data-testid="products-section"
     >
       <div

@@ -5,7 +5,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer
-      className="relative border-t border-ice-border px-6 md:px-12 lg:px-20 py-20 lg:py-24 overflow-hidden"
+      className="relative px-6 md:px-12 lg:px-20 py-20 lg:py-24 overflow-hidden"
       data-testid="footer"
     >
       <div
@@ -88,7 +88,7 @@ export const Footer = () => {
               <li key={h}>
                 <a
                   href={h}
-                  className="text-white/70 hover:text-ice-primary transition-colors link-underline"
+                  className="text-white/70 hover:text-ice-primary transition-colors"
                   data-testid={`footer-link-${l.toLowerCase()}`}
                 >
                   {l}
@@ -107,7 +107,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="hex-divider mt-16 lg:mt-20 mb-8" />
+      <div className="mt-16 lg:mt-20 mb-8" />
 
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] uppercase tracking-[0.24em] text-white/40">
         <span>© {year} ICELAB · Invisible Luxury · All rights reserved</span>

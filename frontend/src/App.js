@@ -22,7 +22,7 @@ const MARQUEE_WORDS = [
 
 const Marquee = () => (
   <div
-    className="border-y border-ice-border overflow-hidden py-7 bg-[#0E1726] relative"
+    className="overflow-hidden py-7 bg-[#0E1726] relative"
     data-testid="marquee"
   >
     <div className="flex gap-12 whitespace-nowrap marquee">

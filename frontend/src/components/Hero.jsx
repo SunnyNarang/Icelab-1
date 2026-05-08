@@ -71,14 +71,12 @@ export const Hero = () => {
         />
       </div>
 
-      {/* Side rails — corner ticks */}
+      {/* Side rails — corner labels (no vertical lines) */}
       <div className="absolute top-32 left-6 lg:left-10 hidden md:flex flex-col items-start gap-2 text-[10px] uppercase tracking-[0.4em] text-white/40">
         <span>N° 001</span>
-        <span className="block w-px h-16 bg-white/15 mt-2" />
       </div>
       <div className="absolute top-32 right-6 lg:right-10 hidden md:flex flex-col items-end gap-2 text-[10px] uppercase tracking-[0.4em] text-white/40">
         <span>MMXXIV</span>
-        <span className="block w-px h-16 bg-white/15 mt-2" />
       </div>
 
       {/* Content */}
@@ -164,7 +162,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.45 }}
-          className="border-t border-white/10 px-6 md:px-10 lg:px-16 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 items-center"
+          className="px-6 md:px-10 lg:px-16 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 items-center"
         >
           {META.map((m) => (
             <div key={m.k} className="flex items-center gap-3">

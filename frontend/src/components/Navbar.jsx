@@ -46,7 +46,7 @@ export const Navbar = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-[10.5px] uppercase tracking-[0.32em] text-white/65 hover:text-ice-primary transition-colors duration-300 link-underline"
+                className="text-[10.5px] uppercase tracking-[0.32em] text-white/65 hover:text-ice-primary transition-colors duration-300"
                 data-testid={`nav-link-${l.label.toLowerCase()}`}
               >
                 {l.label}

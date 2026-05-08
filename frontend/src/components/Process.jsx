@@ -9,7 +9,7 @@ export const Process = () => {
   return (
     <section
       id="process"
-      className="relative overflow-hidden border-t border-ice-border"
+      className="relative overflow-hidden"
       data-testid="process-section"
     >
       <div

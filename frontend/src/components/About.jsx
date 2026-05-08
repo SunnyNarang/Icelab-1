@@ -105,19 +105,6 @@ export const About = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-[#0E1726]/70 via-transparent to-transparent" />
             <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
 
-            {/* Corner ticks */}
-            {[
-              "top-3 left-3 border-t border-l",
-              "top-3 right-3 border-t border-r",
-              "bottom-3 left-3 border-b border-l",
-              "bottom-3 right-3 border-b border-r",
-            ].map((c, i) => (
-              <span
-                key={i}
-                className={`absolute w-5 h-5 border-ice-primary/80 ${c}`}
-              />
-            ))}
-
             {/* Image label */}
             <div className="absolute top-6 left-6 text-[10px] uppercase tracking-[0.32em] text-white/85">
               N° 002 — The Atelier
