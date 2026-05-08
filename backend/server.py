@@ -10,6 +10,7 @@ from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
 import uuid
+import html
 from datetime import datetime, timezone
 
 
@@ -70,6 +71,11 @@ class Inquiry(BaseModel):
 
 # ---------- Helpers ----------
 def _build_email_html(inq: Inquiry) -> str:
+    name = html.escape(inq.name)
+    email = html.escape(inq.email)
+    company = html.escape(inq.company) if inq.company else ""
+    inquiry_type = html.escape(inq.inquiry_type)
+    message = html.escape(inq.message)
     return f"""
     <table width="100%" cellpadding="0" cellspacing="0" style="background:#0E1726;padding:32px 0;font-family:Arial,Helvetica,sans-serif;color:#FFFFFF;">
       <tr><td align="center">
@@ -80,17 +86,17 @@ def _build_email_html(inq: Inquiry) -> str:
           </td></tr>
           <tr><td style="padding:24px 32px;border-top:1px solid #243754;">
             <p style="margin:0 0 6px 0;color:#8BA1C1;font-size:11px;letter-spacing:2px;text-transform:uppercase;">From</p>
-            <p style="margin:0;color:#FFFFFF;font-size:18px;">{inq.name}</p>
-            <p style="margin:4px 0 0 0;color:#8BD7FF;font-size:14px;">{inq.email}</p>
-            {f'<p style="margin:4px 0 0 0;color:#8BA1C1;font-size:13px;">{inq.company}</p>' if inq.company else ''}
+            <p style="margin:0;color:#FFFFFF;font-size:18px;">{name}</p>
+            <p style="margin:4px 0 0 0;color:#8BD7FF;font-size:14px;">{email}</p>
+            {f'<p style="margin:4px 0 0 0;color:#8BA1C1;font-size:13px;">{company}</p>' if company else ''}
           </td></tr>
           <tr><td style="padding:0 32px 24px 32px;">
             <p style="margin:0 0 6px 0;color:#8BA1C1;font-size:11px;letter-spacing:2px;text-transform:uppercase;">Inquiry Type</p>
-            <p style="margin:0;color:#FFFFFF;font-size:15px;">{inq.inquiry_type}</p>
+            <p style="margin:0;color:#FFFFFF;font-size:15px;">{inquiry_type}</p>
           </td></tr>
           <tr><td style="padding:0 32px 32px 32px;">
             <p style="margin:0 0 6px 0;color:#8BA1C1;font-size:11px;letter-spacing:2px;text-transform:uppercase;">Message</p>
-            <p style="margin:0;color:#FFFFFF;font-size:15px;line-height:1.6;white-space:pre-wrap;">{inq.message}</p>
+            <p style="margin:0;color:#FFFFFF;font-size:15px;line-height:1.6;white-space:pre-wrap;">{message}</p>
           </td></tr>
           <tr><td style="padding:16px 32px;border-top:1px solid #243754;background:#0E1726;">
             <p style="margin:0;color:#8BA1C1;font-size:11px;letter-spacing:2px;text-transform:uppercase;">ICELAB &middot; From Gwalior to the world</p>

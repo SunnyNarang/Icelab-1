@@ -1,26 +1,57 @@
+import { LogoFull } from "./Logo";
+import { Instagram, Linkedin, Mail } from "lucide-react";
+
 export const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer
-      className="relative border-t border-ice-border px-6 md:px-12 lg:px-20 py-16 lg:py-20"
+      className="relative border-t border-ice-border px-6 md:px-12 lg:px-20 py-20 lg:py-24 overflow-hidden"
       data-testid="footer"
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 items-start">
+      <div
+        className="ambient-glow"
+        style={{
+          width: 480,
+          height: 480,
+          left: "30%",
+          bottom: "-60%",
+          background: "#3A8DFF",
+          opacity: 0.18,
+        }}
+      />
+
+      <div className="relative grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 items-start">
         <div className="md:col-span-5">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="w-2 h-2 rounded-full bg-ice-primary glow-soft animate-glow-pulse" />
-            <span className="font-heading text-base tracking-[0.4em] uppercase">
-              ICELAB
-            </span>
-          </div>
-          <p className="font-heading text-2xl md:text-3xl tracking-tight font-light text-white max-w-md leading-tight">
+          <LogoFull
+            className="block w-32 h-32 lg:w-36 lg:h-36"
+            style={{ objectFit: "contain" }}
+          />
+          <p className="mt-6 font-heading text-2xl md:text-3xl tracking-tight font-light text-white max-w-md leading-tight">
             Invisible yet
             <span className="italic text-ice-primary"> extraordinary</span>.
           </p>
-          <p className="mt-6 text-white/55 text-sm font-light max-w-md leading-relaxed">
+          <p className="mt-5 text-white/55 text-sm font-light max-w-md leading-relaxed">
             Crafting the world&rsquo;s clearest ice for luxury bars, premium
-            restaurants, hotels, and event ateliers since 2024.
+            restaurants, hotels, and event ateliers. From Gwalior to the world.
           </p>
+
+          <div className="mt-8 flex items-center gap-3">
+            {[
+              { Icon: Instagram, href: "#", label: "Instagram" },
+              { Icon: Linkedin, href: "#", label: "LinkedIn" },
+              { Icon: Mail, href: "mailto:hello@icelab.co", label: "Email" },
+            ].map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="w-10 h-10 inline-flex items-center justify-center border border-ice-border hover:border-ice-primary hover:text-ice-primary transition-colors"
+                data-testid={`footer-social-${label.toLowerCase()}`}
+              >
+                <Icon size={15} strokeWidth={1.4} />
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="md:col-span-3">
@@ -30,7 +61,7 @@ export const Footer = () => {
             <br />
             India — 474001
           </p>
-          <p className="mt-6 overline mb-3">Contact</p>
+          <p className="mt-8 overline mb-3">Trade</p>
           <a
             href="mailto:hello@icelab.co"
             className="text-white/70 hover:text-ice-primary text-sm font-light transition-colors"
@@ -38,6 +69,9 @@ export const Footer = () => {
           >
             hello@icelab.co
           </a>
+          <p className="mt-2 text-white/50 text-xs font-light tracking-wide">
+            Mon — Sat · 10:00 — 19:00 IST
+          </p>
         </div>
 
         <div className="md:col-span-4">
@@ -45,7 +79,7 @@ export const Footer = () => {
           <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm font-light">
             {[
               ["About", "#about"],
-              ["Products", "#products"],
+              ["Collection", "#products"],
               ["Process", "#process"],
               ["Values", "#values"],
               ["Stories", "#testimonials"],
@@ -54,7 +88,7 @@ export const Footer = () => {
               <li key={h}>
                 <a
                   href={h}
-                  className="text-white/70 hover:text-ice-primary transition-colors"
+                  className="text-white/70 hover:text-ice-primary transition-colors link-underline"
                   data-testid={`footer-link-${l.toLowerCase()}`}
                 >
                   {l}
@@ -62,12 +96,22 @@ export const Footer = () => {
               </li>
             ))}
           </ul>
+
+          <div className="mt-10 p-6 border border-ice-border bg-ice-surface/50 backdrop-blur-xl">
+            <p className="overline mb-2">Whisper Letter</p>
+            <p className="text-white/65 text-xs font-light leading-relaxed">
+              Quiet dispatches on craftsmanship, bartender stories and limited
+              releases. Sent only when worth your time.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="mt-16 lg:mt-20 pt-8 border-t border-ice-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] uppercase tracking-[0.24em] text-white/40">
-        <span>© {year} ICELAB · All rights reserved</span>
-        <span>From Gwalior to the world</span>
+      <div className="hex-divider mt-16 lg:mt-20 mb-8" />
+
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] uppercase tracking-[0.24em] text-white/40">
+        <span>© {year} ICELAB · Invisible Luxury · All rights reserved</span>
+        <span>Crafted with clarity in India</span>
       </div>
     </footer>
   );
