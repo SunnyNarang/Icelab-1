@@ -28,7 +28,7 @@ export const Process = () => {
             transition={{ duration: 0.7 }}
             className="flex items-center gap-3 mb-8"
           >
-            <p className="overline">Craftsmanship — 03</p>
+            <p className="overline">Craftsmanship · 03</p>
           </motion.div>
 
           <motion.h2
@@ -73,10 +73,6 @@ export const Process = () => {
               <p className="text-white/60 text-sm font-light leading-relaxed">
                 {s.body}
               </p>
-              {/* Bottom line — animated */}
-              <div className="mt-10 h-px bg-ice-border relative overflow-hidden">
-                <div className="absolute inset-y-0 left-0 w-0 bg-ice-primary group-hover:w-full transition-all duration-1000" />
-              </div>
             </motion.div>
           ))}
         </div>

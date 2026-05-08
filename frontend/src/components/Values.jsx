@@ -21,7 +21,7 @@ export const Values = () => {
             transition={{ duration: 0.7 }}
             className="flex items-center gap-3 mb-8"
           >
-            <p className="overline">Principles — 04</p>
+            <p className="overline">Principles · 04</p>
           </motion.div>
 
           <motion.h2

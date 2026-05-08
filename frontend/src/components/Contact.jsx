@@ -60,7 +60,7 @@ export const Contact = () => {
             transition={{ duration: 0.7 }}
             className="overline mb-8"
           >
-            Enquiries — 06
+            Enquiries · 06
           </motion.p>
 
           <motion.h2
@@ -185,7 +185,7 @@ export const Contact = () => {
                 <ChevronDown
                   size={16}
                   strokeWidth={1.5}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 text-ice-primary pointer-events-none"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-ice-primary pointer-events-none"
                 />
               </div>
             </div>

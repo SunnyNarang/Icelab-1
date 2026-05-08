@@ -36,7 +36,7 @@ export const About = () => {
             transition={{ duration: 0.7 }}
             className="flex items-center gap-3 mb-8"
           >
-            <p className="overline">About — 01</p>
+            <p className="overline">About · 01</p>
           </motion.div>
 
           <motion.h2

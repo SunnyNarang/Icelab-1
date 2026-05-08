@@ -188,15 +188,14 @@ body {
 /* Input styling */
 .ice-input {
     width: 100%;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid #243754;
+    background: rgba(22, 35, 56, 0.35);
+    border: 1px solid #243754;
     color: #fff;
-    padding: 14px 0;
+    padding: 14px 16px;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     font-weight: 300;
-    transition: border-color 0.4s ease;
+    transition: border-color 0.4s ease, background 0.4s ease;
     outline: none;
 }
 .ice-input::placeholder {
@@ -204,7 +203,8 @@ body {
     font-weight: 300;
 }
 .ice-input:focus {
-    border-bottom-color: #8BD7FF;
+    border-color: #8BD7FF;
+    background: rgba(22, 35, 56, 0.55);
 }
 .ice-input:disabled {
     opacity: 0.4;
@@ -212,7 +212,7 @@ body {
 
 textarea.ice-input {
     resize: vertical;
-    min-height: 100px;
+    min-height: 120px;
 }
 
 /* Reset for emergent debug */

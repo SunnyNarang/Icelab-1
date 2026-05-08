@@ -37,7 +37,7 @@ export const Testimonials = () => {
             transition={{ duration: 0.7 }}
             className="overline mb-8"
           >
-            Stories — 05
+            Stories · 05
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
@@ -80,7 +80,7 @@ export const Testimonials = () => {
                   &ldquo;{t.quote}&rdquo;
                 </p>
 
-                <footer className="flex items-center justify-between gap-6 pt-8 border-t border-ice-border">
+                <footer className="flex items-center justify-between gap-6 pt-8">
                   <div>
                     <div className="font-heading text-base md:text-lg tracking-tight">
                       {t.author}
@@ -112,16 +112,16 @@ export const Testimonials = () => {
             </AnimatePresence>
           </div>
 
-          <div className="mt-8 flex gap-2">
+          <div className="mt-8 flex gap-2 items-center">
             {TESTIMONIALS.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setI(idx)}
                 aria-label={`Show testimonial ${idx + 1}`}
-                className={`h-px transition-all duration-500 ${
+                className={`rounded-full transition-all duration-500 ${
                   idx === i
-                    ? "bg-ice-primary w-12"
-                    : "bg-ice-border hover:bg-white/40 w-6"
+                    ? "bg-ice-primary w-3 h-3"
+                    : "bg-ice-border hover:bg-white/40 w-2 h-2"
                 }`}
                 data-testid={`testimonial-dot-${idx}`}
               />
