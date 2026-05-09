@@ -12,7 +12,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40 bg-[#060A12]"
+      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40 lg:pb-0 bg-[#060A12]"
       data-testid="about-section"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --bg: #060A12;
+    --bg: #9faabf;
     --bg-2: #0B111E;
     --surface: #0F1726;
     --border: #1A2438;
@@ -44,7 +44,7 @@ html {
 
 body {
     margin: 0;
-    background-color: #060A12;
+    background-color: #dcdcdc;
     color: #FFFFFF;
     font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
     font-weight: 300;
