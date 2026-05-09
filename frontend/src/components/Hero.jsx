@@ -1,125 +1,74 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Plus } from "lucide-react";
-import HexagonMark from "./HexagonMark";
-import Particles from "./Particles";
-
-const HERO_IMAGE =
-  "https://static.prod-images.emergentagent.com/jobs/c722b6d0-e96a-4482-92ab-5e24cb60d553/images/28ef96cd89af584a480b8d40511f65ca842a2e6a8206e01de28201751500b17b.png";
-
-const META = [
-  { k: "EST.", v: "Gwalior, IN" },
-  { k: "SERVES", v: "Luxury Bars · Hotels · Events" },
-  { k: "CRAFT", v: "72-hour Directional Freeze" },
-];
+import { ArrowDown } from "lucide-react";
+import { LogoMark } from "./Logo";
+import { tileBg, TILES } from "../lib/brandkit";
 
 export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full overflow-hidden grain"
+      className="relative min-h-screen w-full overflow-hidden bg-[#060A12]"
       data-testid="hero-section"
     >
-      {/* Background image */}
+      {/* Brand-kit Tile 04 — crystal cube imagery (dimmed) */}
       <div
-        className="absolute inset-0 bg-cover bg-center scale-105"
-        style={{ backgroundImage: `url(${HERO_IMAGE})` }}
+        className="absolute inset-0"
+        style={{
+          ...tileBg(...TILES.brandBaseline),
+          filter: "brightness(0.55) contrast(1.15) saturate(0.9)",
+        }}
       />
-      {/* Tonal overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0E1726]/75 via-[#0E1726]/55 to-[#0E1726]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(58,141,255,0.18),transparent_60%)]" />
-
-      {/* Logo hex mark — gigantic faded watermark */}
-      <HexagonMark
-        size={680}
-        stroke="#8BD7FF"
-        strokeWidth={1}
-        opacity={0.06}
-        animated
-        className="hidden md:block absolute"
-        style={{ right: "-8%", top: "10%" }}
-      />
-      <HexagonMark
-        size={300}
-        stroke="#8BD7FF"
-        strokeWidth={1}
-        opacity={0.04}
-        className="hidden md:block absolute"
-        style={{ left: "-6%", bottom: "20%" }}
-      />
-
-      {/* Ambient glows */}
-      <div
-        className="ambient-glow"
-        style={{ width: 520, height: 520, top: "-15%", left: "-10%", background: "#3A8DFF" }}
-      />
-      <div
-        className="ambient-glow"
-        style={{ width: 600, height: 600, bottom: "-25%", right: "-15%", background: "#8BD7FF" }}
-      />
-
-      {/* Floating particles */}
-      <Particles count={28} />
-
-      {/* Light beam sweep */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-0 left-0 h-full w-[30vw] beam-sweep"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(139,215,255,0.07), transparent)",
-          }}
-        />
+      {/* Heavy edge masks to suppress kit labels & gridlines */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-x-0 top-0 h-[28%] bg-gradient-to-b from-[#060A12] via-[#060A12]/90 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-[#060A12] to-transparent" />
+        <div className="absolute inset-y-0 left-0 w-[35%] bg-gradient-to-r from-[#060A12] via-[#060A12]/85 to-transparent" />
+        <div className="absolute inset-y-0 right-0 w-[5%] bg-[#060A12]" />
       </div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#060A12] via-[#060A12]/65 to-[#060A12]/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#060A12]/60 via-transparent to-[#060A12]" />
 
-      {/* Side rails — corner labels (no vertical lines) */}
-      <div className="absolute top-32 left-6 lg:left-10 hidden md:flex flex-col items-start gap-2 text-[10px] uppercase tracking-[0.4em] text-white/40">
-        <span>N° 001</span>
-      </div>
-      <div className="absolute top-32 right-6 lg:right-10 hidden md:flex flex-col items-end gap-2 text-[10px] uppercase tracking-[0.4em] text-white/40">
-        <span>MMXXIV</span>
-      </div>
-
-      {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col">
-        <div className="flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-32 pb-12 lg:pb-16">
+        <div className="flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-32 pb-12 lg:pb-20">
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.5 }}
-            className="flex items-center gap-4 mb-10"
+            transition={{ duration: 0.6 }}
+            className="flex items-center gap-6 mb-8"
             data-testid="hero-overline"
           >
-            <p className="overline !text-white/85">
-              ICELAB · Invisible Luxury
-            </p>
-            <span className="block w-1 h-1 rounded-full bg-ice-primary" />
-            <p className="overline !text-white/55 hidden md:inline">
-              Est. Gwalior · Worldwide
-            </p>
+            <LogoMark size={42} />
+            <div className="flex flex-col leading-none">
+              <span className="font-heading text-[12px] tracking-[0.5em] uppercase text-white">
+                ICELAB
+              </span>
+              <span className="mt-1 text-[9px] tracking-[0.5em] uppercase text-ice-primary/80">
+                Invisible Luxury
+              </span>
+            </div>
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.7, ease: [0.7, 0, 0.3, 1] }}
-            className="heading-display text-[15vw] md:text-[11vw] lg:text-[9.5vw] xl:text-[8.5rem] max-w-[1500px]"
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="heading-display text-[14vw] md:text-[10vw] lg:text-[8.5vw] xl:text-[8rem] max-w-[1500px]"
             data-testid="hero-title"
           >
-            <span className="block">Invisible</span>
-            <span className="block">
-              yet{" "}
-              <span className="italic font-extralight text-ice-primary glow-text">
-                extraordinary
-              </span>
-              <span className="text-ice-primary">.</span>
+            Invisible
+            <br />
+            yet{" "}
+            <span className="italic font-extralight text-ice-primary">
+              extraordinary
             </span>
+            <span className="text-ice-primary">.</span>
           </motion.h1>
 
-          <div className="mt-12 lg:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+          <div className="mt-12 lg:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.05 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-6"
             >
               <p
@@ -127,28 +76,29 @@ export const Hero = () => {
                 data-testid="hero-tagline"
               >
                 Crafted with science. Defined by clarity. Elevated in every
-                experience.{" "}
-                <span className="text-white">This is invisible luxury.</span>
+                experience. <span className="text-white">This is invisible luxury.</span>
+              </p>
+              <p className="mt-6 text-[11px] uppercase tracking-[0.36em] text-ice-primary/80">
+                Pure · Premium · Pristine
               </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.2 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
               className="lg:col-span-6 flex flex-wrap gap-4 lg:justify-end"
             >
               <a
                 href="#products"
-                className="group inline-flex items-center gap-3 bg-ice-primary text-[#0E1726] hover:bg-ice-primaryHover px-9 py-4 text-[10.5px] uppercase tracking-[0.36em] font-medium transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-ice-primary text-[#060A12] hover:bg-ice-primaryHover px-9 py-4 text-[10.5px] uppercase tracking-[0.36em] font-medium transition-colors"
                 data-testid="hero-cta-primary"
               >
                 Explore the Collection
-                <span className="block w-2 h-2 rounded-full bg-[#0E1726] transition-transform duration-500 group-hover:translate-x-1" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-3 border border-white/20 hover:border-ice-primary hover:text-ice-primary px-9 py-4 text-[10.5px] uppercase tracking-[0.36em] font-medium transition-all duration-300"
+                className="inline-flex items-center gap-3 border border-white/20 hover:border-ice-primary hover:text-ice-primary px-9 py-4 text-[10.5px] uppercase tracking-[0.36em] font-medium transition-colors"
                 data-testid="hero-cta-secondary"
               >
                 Enquire for Trade
@@ -157,39 +107,22 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Bottom strip — meta data */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 1.45 }}
-          className="px-6 md:px-10 lg:px-16 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 items-center"
+        {/* Bottom strip */}
+        <div
+          className="px-6 md:px-10 lg:px-16 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 items-center text-[10px] uppercase tracking-[0.32em] text-white/45"
         >
-          {META.map((m) => (
-            <div key={m.k} className="flex items-center gap-3">
-              <Plus size={11} strokeWidth={1.5} className="text-ice-primary" />
-              <div>
-                <div className="text-[9px] uppercase tracking-[0.32em] text-white/40">
-                  {m.k}
-                </div>
-                <div className="text-[12px] tracking-wide text-white/85 mt-1 font-light">
-                  {m.v}
-                </div>
-              </div>
-            </div>
-          ))}
+          <span>N° 001 · Est. Gwalior</span>
+          <span className="hidden md:inline">72-Hour Directional Freeze</span>
+          <span className="hidden md:inline">Pan-India Cold-Chain</span>
           <a
             href="#about"
-            className="hidden md:inline-flex items-center justify-end gap-3 text-[10px] uppercase tracking-[0.32em] text-white/55 hover:text-ice-primary transition-colors group"
+            className="inline-flex items-center justify-end gap-2 hover:text-ice-primary transition-colors"
             data-testid="hero-scroll-cue"
           >
-            <ArrowDown
-              size={14}
-              strokeWidth={1.5}
-              className="animate-bounce"
-            />
-            <span>Begin the experience</span>
+            <ArrowDown size={13} strokeWidth={1.5} />
+            <span>Begin</span>
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

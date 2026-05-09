@@ -1,25 +1,15 @@
-// Brand logo — new dark-bg mark for navbar (no text), full lockup for footer.
-const LOGO_MARK_URL =
-  "https://customer-assets.emergentagent.com/job_glowing-clarity/artifacts/vcfneyhx_with%20Dark%20Bg%20copy.png";
-const LOGO_FULL_URL =
-  "https://customer-assets.emergentagent.com/job_glowing-clarity/artifacts/qssokskv_With%20white%20BG.png";
+import { LOGO_MARK } from "../lib/brandkit";
 
-const fullImgStyle = {
-  filter: "invert(1) brightness(1.6)",
-  mixBlendMode: "screen",
-};
-
-// Compact horizontal lockup for navbar: mark + typeset wordmark
-export const LogoCompact = ({ className = "", onClick, showTagline = true }) => (
+// Brand mark — direct image, no filter manipulation needed (already on dark BG)
+export const LogoCompact = ({ className = "", showTagline = true }) => (
   <a
     href="#hero"
-    onClick={onClick}
     className={`inline-flex items-center gap-3 group ${className}`}
     data-testid="logo-compact"
     aria-label="ICELAB — Invisible Luxury"
   >
     <img
-      src={LOGO_MARK_URL}
+      src={LOGO_MARK}
       alt=""
       aria-hidden
       className="block w-10 h-10 lg:w-11 lg:h-11 shrink-0 object-contain"
@@ -37,31 +27,13 @@ export const LogoCompact = ({ className = "", onClick, showTagline = true }) => 
   </a>
 );
 
-// Full logo image — used in footer
-export const LogoFull = ({ className = "", style = {} }) => (
+export const LogoMark = ({ size = 80, className = "" }) => (
   <img
-    src={LOGO_FULL_URL}
-    alt="ICELAB · Invisible Luxury"
-    className={className}
-    style={{ ...fullImgStyle, ...style }}
-    loading="lazy"
-  />
-);
-
-// Giant decorative watermark (kept for compatibility)
-export const LogoWatermark = ({ className = "", opacity = 0.08, style = {} }) => (
-  <img
-    src={LOGO_FULL_URL}
-    alt=""
-    aria-hidden
-    className={`pointer-events-none select-none ${className}`}
-    style={{
-      ...fullImgStyle,
-      opacity,
-      ...style,
-    }}
+    src={LOGO_MARK}
+    alt="ICELAB"
+    className={`object-contain ${className}`}
+    style={{ width: size, height: size }}
   />
 );
 
 export default LogoCompact;
-

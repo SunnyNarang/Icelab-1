@@ -14,7 +14,7 @@ export const Contact = () => {
     inquiry_type: INQUIRY_TYPES[0],
     message: "",
   });
-  const [status, setStatus] = useState("idle"); // idle | submitting | success | error
+  const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -48,81 +48,71 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40"
+      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40 bg-[#060A12]"
       data-testid="contact-section"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
         <div className="lg:col-span-5">
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
             className="overline mb-8"
           >
             Enquiries · 06
           </motion.p>
 
           <motion.h2
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9 }}
+            transition={{ duration: 0.6 }}
             className="heading-section text-4xl md:text-5xl lg:text-6xl"
             data-testid="contact-title"
           >
             Let&rsquo;s craft the
             <br />
-            <span className="italic text-ice-primary">next chapter</span>.
+            <span className="italic font-extralight text-ice-primary">
+              next chapter
+            </span>.
           </motion.h2>
 
-          <p className="mt-8 max-w-sm text-white/65 font-light leading-relaxed">
+          <p className="mt-8 max-w-sm text-white/60 font-light leading-relaxed">
             For trade, hospitality and bespoke commissions. We respond within
             one business day.
           </p>
 
           <div className="mt-12 space-y-6 text-sm">
             <a
-              href="mailto:hello@icelab.co"
+              href="mailto:hello@icelab.in"
               className="flex items-start gap-4 group"
               data-testid="contact-email-link"
             >
-              <Mail
-                size={18}
-                strokeWidth={1.25}
-                className="text-ice-primary mt-0.5 shrink-0"
-              />
+              <Mail size={18} strokeWidth={1.25} className="text-ice-primary mt-0.5 shrink-0" />
               <div>
                 <div className="overline mb-1 !text-white/40">Email</div>
-                <div className="text-white/85 group-hover:text-ice-primary transition-colors">
-                  hello@icelab.co
+                <div className="text-white/80 group-hover:text-ice-primary transition-colors">
+                  hello@icelab.in
                 </div>
               </div>
             </a>
             <div className="flex items-start gap-4">
-              <MapPin
-                size={18}
-                strokeWidth={1.25}
-                className="text-ice-primary mt-0.5 shrink-0"
-              />
+              <MapPin size={18} strokeWidth={1.25} className="text-ice-primary mt-0.5 shrink-0" />
               <div>
                 <div className="overline mb-1 !text-white/40">Atelier</div>
-                <div className="text-white/85">Gwalior, India · Worldwide delivery</div>
+                <div className="text-white/80">Gwalior, India · Pan-India delivery</div>
               </div>
             </div>
           </div>
         </div>
 
-        <motion.form
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
+        <form
           onSubmit={submit}
-          className="lg:col-span-7 space-y-8"
+          className="lg:col-span-7 space-y-7"
           data-testid="contact-form"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="overline block mb-3 !text-white/45">Name</label>
               <input
@@ -150,7 +140,7 @@ export const Contact = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="overline block mb-3 !text-white/45">
                 Company / Venue
@@ -212,7 +202,7 @@ export const Contact = () => {
             <button
               type="submit"
               disabled={status === "submitting" || status === "success"}
-              className="inline-flex items-center justify-center gap-3 bg-ice-primary text-[#0E1726] hover:bg-ice-primaryHover px-10 py-4 text-[11px] uppercase tracking-[0.32em] font-medium transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="inline-flex items-center justify-center gap-3 bg-ice-primary text-[#060A12] hover:bg-ice-primaryHover px-10 py-4 text-[10.5px] uppercase tracking-[0.36em] font-medium transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               data-testid="contact-submit-button"
             >
               {status === "submitting" && (
@@ -224,34 +214,27 @@ export const Contact = () => {
                 : status === "success"
                 ? "Sent"
                 : "Send Inquiry"}
-              {status === "idle" && (
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0E1726]" />
-              )}
             </button>
           </div>
 
           {status === "success" && (
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+            <div
               className="border border-ice-primary/40 bg-ice-primary/5 px-6 py-5 text-sm font-light text-ice-primary"
               data-testid="contact-success-message"
             >
               Thank you. Your inquiry has been received — we&rsquo;ll be in
               touch shortly.
-            </motion.div>
+            </div>
           )}
           {status === "error" && (
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+            <div
               className="border border-red-400/40 bg-red-400/5 px-6 py-5 text-sm font-light text-red-300"
               data-testid="contact-error-message"
             >
               {errorMsg || "Something went wrong. Please try again."}
-            </motion.div>
+            </div>
           )}
-        </motion.form>
+        </form>
       </div>
     </section>
   );
