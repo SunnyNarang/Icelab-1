@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { LogoMark } from "./Logo";
 import { HERO_CUBE } from "../lib/brandkit";
 
 export const Hero = () => {
@@ -10,14 +9,14 @@ export const Hero = () => {
       className="relative min-h-screen w-full overflow-hidden bg-[#060A12]"
       data-testid="hero-section"
     >
-      {/* Hero crystal cube — anchored to the right */}
+      {/* Hero crystal cube — bottom-anchored with top padding */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: `url(${HERO_CUBE})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center right",
+          backgroundSize: "auto 85%",
+          backgroundPosition: "right bottom",
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#060A12] via-[#060A12]/60 to-transparent" />
@@ -31,18 +30,10 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-6 mb-8"
+            className="mb-8"
             data-testid="hero-overline"
           >
-            <LogoMark size={42} />
-            <div className="flex flex-col leading-none">
-              <span className="font-heading text-[12px] tracking-[0.5em] uppercase text-white">
-                ICELAB
-              </span>
-              <span className="mt-1 text-[9px] tracking-[0.5em] uppercase text-ice-primary/80">
-                Invisible Luxury
-              </span>
-            </div>
+            <p className="overline">Pure · Cold · Clear</p>
           </motion.div>
 
           <motion.h1
