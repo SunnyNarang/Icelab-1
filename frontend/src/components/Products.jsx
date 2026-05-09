@@ -1,8 +1,54 @@
 import { motion } from "framer-motion";
-import { Box, Circle, Minus, Square, Sparkles, BadgeCheck } from "lucide-react";
+import { productImg } from "../lib/brandkit";
 import { PRODUCTS, TRUST_BADGES } from "../lib/data";
 
-const ICONS = [Box, Circle, Minus, Square, Sparkles, BadgeCheck];
+const ProductCard = ({ p, i }) => (
+  <motion.article
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.15 }}
+    transition={{ duration: 0.55, delay: i * 0.05 }}
+    className="group relative bg-[#0B111E] border border-ice-border overflow-hidden"
+    data-testid={`product-card-${p.id}`}
+  >
+    {/* Image */}
+    <div className="relative aspect-[4/3] overflow-hidden bg-[#060A12]">
+      <div
+        className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.04]"
+        style={productImg(...p.img)}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0B111E] via-transparent to-transparent pointer-events-none" />
+      <div className="absolute top-5 left-5 text-[10px] uppercase tracking-[0.32em] text-white/85">
+        {p.code}
+      </div>
+      <div className="absolute top-5 right-5 text-[10px] uppercase tracking-[0.24em] text-white/55">
+        {p.spec}
+      </div>
+    </div>
+
+    {/* Content */}
+    <div className="p-7 lg:p-9">
+      <h3 className="font-heading text-2xl lg:text-3xl tracking-tight font-light leading-tight">
+        {p.name}
+      </h3>
+      <p className="mt-2 text-ice-primary text-sm font-light italic">
+        {p.tagline}
+      </p>
+      <p className="mt-5 text-white/55 text-sm leading-relaxed font-light">
+        {p.description}
+      </p>
+      <div className="mt-7 flex items-center justify-between text-[10px] uppercase tracking-[0.32em] text-white/45">
+        <span>0{i + 1} / 06</span>
+        <a
+          href="#contact"
+          className="text-white/70 hover:text-ice-primary transition-colors"
+        >
+          Enquire →
+        </a>
+      </div>
+    </div>
+  </motion.article>
+);
 
 export const Products = () => {
   return (
@@ -42,55 +88,15 @@ export const Products = () => {
         </p>
       </div>
 
-      {/* Product list (textual cards, brand-kit aesthetic) */}
-      <div className="mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-ice-border border border-ice-border">
-        {PRODUCTS.map((p, i) => {
-          const Icon = ICONS[i];
-          return (
-            <motion.article
-              key={p.id}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="bg-[#060A12] hover:bg-[#0B111E] transition-colors duration-300 p-8 lg:p-10 ring-ice"
-              data-testid={`product-card-${p.id}`}
-            >
-              <div className="flex items-start justify-between mb-12">
-                <Icon
-                  size={28}
-                  strokeWidth={1.25}
-                  className="text-ice-primary"
-                />
-                <span className="text-[10px] uppercase tracking-[0.32em] text-white/40">
-                  {p.code}
-                </span>
-              </div>
-              <h3 className="font-heading text-2xl lg:text-3xl tracking-tight font-light leading-tight">
-                {p.name}
-              </h3>
-              <p className="mt-2 text-ice-primary text-sm font-light italic">
-                {p.tagline}
-              </p>
-              <p className="mt-5 text-white/55 text-sm leading-relaxed font-light">
-                {p.description}
-              </p>
-              <div className="mt-8 flex items-center justify-between text-[10px] uppercase tracking-[0.32em] text-white/45">
-                <span>{p.spec}</span>
-                <a
-                  href="#contact"
-                  className="text-white/70 hover:text-ice-primary transition-colors"
-                >
-                  Enquire →
-                </a>
-              </div>
-            </motion.article>
-          );
-        })}
+      {/* Product grid — image-led editorial cards */}
+      <div className="mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {PRODUCTS.map((p, i) => (
+          <ProductCard p={p} i={i} key={p.id} />
+        ))}
       </div>
 
       {/* Trust badges row */}
-      <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-ice-border border border-ice-border">
+      <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-ice-border border border-ice-border">
         {TRUST_BADGES.map((b) => (
           <div
             key={b}

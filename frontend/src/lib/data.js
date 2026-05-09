@@ -8,6 +8,7 @@ export const PRODUCTS = [
       "The signature ICELAB cube. Hand-cut from a single block of triple-filtered, slow-frozen ice for a glacial transparency that refuses to dilute the spirit.",
     spec: "50 × 50 mm",
     code: "ICE-001",
+    img: [0, 0],
   },
   {
     id: "ice-ball",
@@ -17,6 +18,7 @@ export const PRODUCTS = [
       "A flawless 60mm sphere — the lowest surface area to volume ratio. Built for whisky, neat pours and the sort of guests who notice.",
     spec: "Ø 60 mm",
     code: "ICE-002",
+    img: [1, 0],
   },
   {
     id: "ice-spear",
@@ -26,6 +28,7 @@ export const PRODUCTS = [
       "The architectural spear — engineered for the highball. Narrow, tall, brilliantly clear, with a melt rate calibrated for long sessions.",
     spec: "150 × 35 mm",
     code: "ICE-003",
+    img: [2, 0],
   },
   {
     id: "ice-slab",
@@ -35,6 +38,7 @@ export const PRODUCTS = [
       "Centerpiece slabs for sculpted serves and brand activations. Cut to your exact dimensions, polished to a museum-grade finish.",
     spec: "Custom",
     code: "ICE-004",
+    img: [0, 1],
   },
   {
     id: "infused-ice",
@@ -44,6 +48,7 @@ export const PRODUCTS = [
       "Botanicals, citrus, edible petals — frozen in suspension for serves that evolve as they melt. Each piece a quiet performance.",
     spec: "Curated profiles",
     code: "ICE-005",
+    img: [2, 1],
   },
   {
     id: "custom-cube",
@@ -53,6 +58,7 @@ export const PRODUCTS = [
       "Embossed logos, monograms, signature shapes. We translate identity into ice — at scale, on schedule, in pristine clarity.",
     spec: "Bespoke moulds",
     code: "ICE-006",
+    img: [1, 1],
   },
 ];
 
