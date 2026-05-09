@@ -76,8 +76,8 @@ export const About = () => {
               style={{
                 backgroundImage: `url(${GLASS_CUBE})`,
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "30% center",
+                backgroundSize: "contain",
+                backgroundPosition: "center",
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#060A12]/60 via-transparent to-transparent pointer-events-none" />
