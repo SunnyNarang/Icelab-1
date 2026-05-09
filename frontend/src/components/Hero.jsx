@@ -25,7 +25,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#060A12]/60 via-transparent to-[#060A12]" />
 
       <div className="relative z-10 min-h-screen flex flex-col">
-        <div className="flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-32 pb-12 lg:pb-20">
+        <div className="flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-24 pb-12 lg:pb-20">
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="heading-display text-[14vw] md:text-[10vw] lg:text-[8.5vw] xl:text-[8rem] max-w-[1500px]"
+            className="heading-display text-[clamp(1rem,10vw,8rem)] leading-[0.9]"
             data-testid="hero-title"
           >
             Invisible

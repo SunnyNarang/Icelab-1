@@ -12,7 +12,7 @@ const ProductCard = ({ p, i }) => (
     data-testid={`product-card-${p.id}`}
   >
     {/* Image */}
-    <div className="relative aspect-[4/3] overflow-hidden bg-[#060A12]">
+    <div className="relative aspect-[3/3] overflow-hidden bg-[#060A12]">
       <div
         className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.04]"
         style={productImg(...p.img)}
@@ -89,7 +89,7 @@ export const Products = () => {
       </div>
 
       {/* Product grid — image-led editorial cards */}
-      <div className="mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div className="mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {PRODUCTS.map((p, i) => (
           <ProductCard p={p} i={i} key={p.id} />
         ))}
