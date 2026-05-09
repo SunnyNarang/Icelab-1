@@ -1,14 +1,28 @@
 import { motion } from "framer-motion";
+import { ICE_SPLASH } from "../lib/brandkit";
 import { PROCESS_STEPS } from "../lib/data";
 
 export const Process = () => {
   return (
     <section
       id="process"
-      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40 bg-[#0B111E]"
+      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 lg:py-40 bg-[#0B111E] overflow-hidden"
       data-testid="process-section"
     >
-      <div className="max-w-3xl">
+      {/* Splash atmospheric backdrop */}
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `url(${ICE_SPLASH})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "saturate(0.85)",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B111E]/85 via-[#0B111E]/70 to-[#0B111E]" />
+
+      <div className="relative max-w-3xl">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +54,7 @@ export const Process = () => {
         </p>
       </div>
 
-      <div className="mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ice-border border border-ice-border">
+      <div className="relative mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ice-border border border-ice-border">
         {PROCESS_STEPS.map((s, i) => (
           <motion.div
             key={s.n}

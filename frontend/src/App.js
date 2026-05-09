@@ -9,6 +9,7 @@ import Values from "@/components/Values";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhatsAppFab from "@/components/WhatsAppFab";
 
 const Landing = () => (
   <main className="bg-[#060A12] text-white" data-testid="icelab-landing">
@@ -21,6 +22,7 @@ const Landing = () => (
     <Testimonials />
     <Contact />
     <Footer />
+    <WhatsAppFab />
   </main>
 );
 

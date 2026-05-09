@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { LogoMark } from "./Logo";
-import { tileBg, TILES } from "../lib/brandkit";
+import { HERO_CUBE } from "../lib/brandkit";
 
 export const Hero = () => {
   return (
@@ -10,21 +10,18 @@ export const Hero = () => {
       className="relative min-h-screen w-full overflow-hidden bg-[#060A12]"
       data-testid="hero-section"
     >
-      {/* Brand-kit Tile 04 — crystal cube imagery (dimmed) */}
+      {/* Hero crystal cube — anchored to the right */}
       <div
         className="absolute inset-0"
         style={{
-          ...tileBg(...TILES.brandBaseline),
-          filter: "brightness(0.55) contrast(1.15) saturate(0.9)",
+          backgroundImage: `url(${HERO_CUBE})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center right",
         }}
       />
-      {/* Heavy edge masks to suppress kit labels & gridlines */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-x-0 top-0 h-[28%] bg-gradient-to-b from-[#060A12] via-[#060A12]/90 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-[#060A12] to-transparent" />
-        <div className="absolute inset-y-0 left-0 w-[35%] bg-gradient-to-r from-[#060A12] via-[#060A12]/85 to-transparent" />
-        <div className="absolute inset-y-0 right-0 w-[5%] bg-[#060A12]" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#060A12] via-[#060A12]/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#060A12]/40 via-transparent to-[#060A12]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#060A12] via-[#060A12]/65 to-[#060A12]/30" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#060A12]/60 via-transparent to-[#060A12]" />
 

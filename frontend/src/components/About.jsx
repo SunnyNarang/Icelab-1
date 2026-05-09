@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { tileBg, TILES } from "../lib/brandkit";
+import { GLASS_CUBE } from "../lib/brandkit";
 
 const STATS = [
   { k: "72h", v: "Directional freeze" },
@@ -70,20 +70,17 @@ export const About = () => {
           transition={{ duration: 0.7 }}
           className="lg:col-span-7 relative"
         >
-          <div className="relative aspect-[4/5] lg:aspect-[5/6] overflow-hidden">
+          <div className="relative aspect-[4/5] lg:aspect-[5/6] overflow-hidden bg-[#060A12]">
             <div
               className="absolute inset-0"
               style={{
-                ...tileBg(...TILES.urban),
-                filter: "brightness(0.45) contrast(1.1) saturate(0.8)",
+                backgroundImage: `url(${GLASS_CUBE})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             />
-            {/* Heavy edge masks to suppress kit labels/baked text */}
-            <div className="absolute inset-x-0 top-0 h-[35%] bg-gradient-to-b from-[#060A12] via-[#060A12]/85 to-transparent pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-[#060A12] to-transparent pointer-events-none" />
-            <div className="absolute inset-y-0 left-0 w-[6%] bg-[#060A12] pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-[6%] bg-[#060A12] pointer-events-none" />
-            <div className="absolute inset-0 bg-[#060A12]/35 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#060A12]/60 via-transparent to-transparent pointer-events-none" />
             <div className="absolute top-6 left-6 text-[10px] uppercase tracking-[0.32em] text-white/85">
               N° 002 · The Atelier
             </div>
