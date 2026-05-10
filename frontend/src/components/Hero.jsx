@@ -15,7 +15,7 @@ export const Hero = () => {
   style={{
     backgroundImage: `url(${HERO_CUBE})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "auto 72%",
+    backgroundSize: "auto 90%",
     backgroundPosition: "85% bottom",
   }}
 />

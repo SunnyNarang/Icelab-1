@@ -13,14 +13,15 @@ export const About = () => {
 <section className="relative overflow-hidden py-24 lg:py-32">
   
   {/* Background Image */}
-  <div
-    className="absolute inset-0 opacity-50 lg:opacity-100 lg:bg-fixed"
-    style={{
-      backgroundImage: `url(${GLASS_CUBE})`,
-      backgroundSize: "cover",
-      backgroundPosition: "60% center",
-    }}
-  />
+<div
+  className="absolute inset-0 opacity-80 lg:opacity-100 lg:bg-fixed
+             bg-no-repeat
+             bg-[position:center_35%] lg:bg-center
+             bg-[length:auto_50%] lg:bg-[length:auto_80%]"
+  style={{
+    backgroundImage: `url(${GLASS_CUBE})`,
+  }}
+/>
   {/* Dark cinematic overlay */}
   <div className="absolute inset-0 bg-gradient-to-r from-[#060A12]/95 via-[#060A12]/88 via-[65%] to-[#060A12]/10" />
 
