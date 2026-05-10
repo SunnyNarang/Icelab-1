@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, ArrowLeft, ArrowRight } from "lucide-react";
 import { TESTIMONIALS } from "../lib/data";
@@ -7,8 +7,22 @@ export const Testimonials = () => {
   const [i, setI] = useState(0);
   const t = TESTIMONIALS[i];
 
-  const next = () => setI((p) => (p + 1) % TESTIMONIALS.length);
-  const prev = () => setI((p) => (p - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  const next = () => {
+    setI((p) => (p + 1) % TESTIMONIALS.length);
+  };
+
+  const prev = () => {
+    setI((p) => (p - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  };
+
+  // Auto-change testimonials every 6 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setI((p) => (p + 1) % TESTIMONIALS.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -23,10 +37,11 @@ export const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-             className="text-[11px] pb-8 tracking-[0.32em] uppercase font-medium text-[#BBD7FF]"
+            className="text-[11px] pb-8 tracking-[0.32em] uppercase font-medium text-[#BBD7FF]"
           >
             Stories
           </motion.p>
+
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,6 +56,7 @@ export const Testimonials = () => {
               connoisseurs.
             </span>
           </motion.h2>
+
           <p className="mt-8 max-w-sm text-white/50 font-light text-sm leading-relaxed">
             From private cocktail bars to hotel groups — the venues that set
             the standard quietly serve our ice.
@@ -48,7 +64,12 @@ export const Testimonials = () => {
         </div>
 
         <div className="lg:col-span-8 relative">
-          <Quote size={56} strokeWidth={1} className="text-ice-primary/30 mb-8" aria-hidden />
+          <Quote
+            size={56}
+            strokeWidth={1}
+            className="text-ice-primary/30 mb-8"
+            aria-hidden
+          />
 
           <div className="relative min-h-[260px]">
             <AnimatePresence mode="wait">
@@ -70,10 +91,12 @@ export const Testimonials = () => {
                     <div className="font-heading text-base md:text-lg tracking-tight">
                       {t.author}
                     </div>
+
                     <div className="mt-1 text-[11px] uppercase tracking-[0.24em] text-white/45">
                       {t.role} · {t.location}
                     </div>
                   </div>
+
                   <div className="flex items-center gap-1">
                     <button
                       onClick={prev}
@@ -83,6 +106,7 @@ export const Testimonials = () => {
                     >
                       <ArrowLeft size={16} strokeWidth={1.5} />
                     </button>
+
                     <button
                       onClick={next}
                       aria-label="Next testimonial"
@@ -104,7 +128,9 @@ export const Testimonials = () => {
                 onClick={() => setI(idx)}
                 aria-label={`Show testimonial ${idx + 1}`}
                 className={`rounded-full transition-all duration-300 ${
-                  idx === i ? "bg-ice-primary w-3 h-3" : "bg-ice-border hover:bg-white/40 w-2 h-2"
+                  idx === i
+                    ? "bg-ice-primary w-3 h-3"
+                    : "bg-ice-border hover:bg-white/40 w-2 h-2"
                 }`}
                 data-testid={`testimonial-dot-${idx}`}
               />
