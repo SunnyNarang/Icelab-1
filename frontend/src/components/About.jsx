@@ -14,10 +14,10 @@ export const About = () => {
   
   {/* Background Image */}
 <div
-  className="absolute inset-0 opacity-80 lg:opacity-100 lg:bg-fixed
+  className="absolute inset-0 opacity-100 lg:opacity-100 lg:bg-fixed
              bg-no-repeat
-             bg-[position:center_35%] lg:bg-center
-             bg-[length:auto_50%] lg:bg-[length:auto_80%]"
+             bg-[position:center_25%] lg:bg-center
+             bg-[length:auto_30%] lg:bg-[length:auto_80%]"
   style={{
     backgroundImage: `url(${GLASS_CUBE})`,
   }}

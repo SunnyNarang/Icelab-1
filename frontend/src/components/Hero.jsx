@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full overflow-hidden bg-[#060A12]"
+      className="relative min-h-screen pt-12 w-full overflow-hidden bg-[#060A12]"
       data-testid="hero-section"
     >
       {/* Hero crystal cube — bottom-anchored with top padding */}
