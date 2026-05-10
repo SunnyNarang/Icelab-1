@@ -6,7 +6,7 @@ export const PRODUCTS = [
     tagline: "Crystal Clear. Perfectly Crafted.",
     description:
       "The signature ICELAB cube. Hand-cut from a single block of triple-filtered, slow-frozen ice for a glacial transparency that refuses to dilute the spirit.",
-    spec: "50 × 50 mm",
+    spec: "40 × 40 mm",
     code: "ICE-001",
     img: [0, 0],
   },

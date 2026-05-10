@@ -18,9 +18,7 @@ const ProductCard = ({ p, i }) => (
         style={productImg(...p.img)}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0B111E] via-transparent to-transparent pointer-events-none" />
-      <div className="absolute top-5 left-5 text-[10px] uppercase tracking-[0.32em] text-white/85">
-        {p.code}
-      </div>
+      
       <div className="absolute top-5 right-5 text-[10px] uppercase tracking-[0.24em] text-white/55">
         {p.spec}
       </div>
@@ -38,7 +36,7 @@ const ProductCard = ({ p, i }) => (
         {p.description}
       </p>
       <div className="mt-7 flex items-center justify-between text-[10px] uppercase tracking-[0.32em] text-white/45">
-        <span>0{i + 1} / 06</span>
+       
         <a
           href="#contact"
           className="text-white/70 hover:text-ice-primary transition-colors"
