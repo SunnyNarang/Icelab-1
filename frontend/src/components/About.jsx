@@ -10,14 +10,17 @@ const STATS = [
 
 export const About = () => {
   return (
-<section
-  className="relative overflow-hidden py-24 lg:py-32 lg:bg-fixed"
-  style={{
-    backgroundImage: `url(${GLASS_CUBE})`,
-    backgroundSize: "cover",
-    backgroundPosition: "60% center",
-  }}
->
+<section className="relative overflow-hidden py-24 lg:py-32">
+  
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 opacity-50 lg:opacity-100 lg:bg-fixed"
+    style={{
+      backgroundImage: `url(${GLASS_CUBE})`,
+      backgroundSize: "cover",
+      backgroundPosition: "60% center",
+    }}
+  />
   {/* Dark cinematic overlay */}
   <div className="absolute inset-0 bg-gradient-to-r from-[#060A12]/95 via-[#060A12]/88 via-[65%] to-[#060A12]/10" />
 

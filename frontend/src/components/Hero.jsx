@@ -11,18 +11,17 @@ export const Hero = () => {
     >
       {/* Hero crystal cube — bottom-anchored with top padding */}
       <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(${HERO_CUBE})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "auto 85%",
-          backgroundPosition: "right bottom",
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#060A12] via-[#060A12]/60 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#060A12]/40 via-transparent to-[#060A12]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#060A12] via-[#060A12]/65 to-[#060A12]/30" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#060A12]/60 via-transparent to-[#060A12]" />
+  className="absolute inset-0 opacity-55 lg:opacity-100"
+  style={{
+    backgroundImage: `url(${HERO_CUBE})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "auto 72%",
+    backgroundPosition: "85% bottom",
+  }}
+/>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#060A12]/95 via-[#060A12]/70 via-[55%] to-transparent" />
+
+<div className="absolute inset-0 bg-gradient-to-b from-[#060A12]/50 via-transparent to-[#060A12]" />
 
       <div className="relative z-10 min-h-screen flex flex-col">
         <div className="flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-24 pb-12 lg:pb-20">
