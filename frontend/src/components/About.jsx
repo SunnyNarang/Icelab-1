@@ -38,9 +38,9 @@ export const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="overline mb-8"
+          className="text-[11px] pb-8 tracking-[0.32em] uppercase font-medium text-[#BBD7FF]"
         >
-          About · 01
+          About
         </motion.p>
 
         <motion.h2
@@ -88,7 +88,7 @@ export const About = () => {
         className="lg:col-span-5"
       >
         <div className="bg-[#0B111E]/90 backdrop-blur-md border border-ice-border p-8 lg:p-10">
-          <p className="overline mb-6">By the Numbers</p>
+          <p  className="text-[11px] pb-8 tracking-[0.32em] uppercase font-medium text-[#BBD7FF]">By the Numbers</p>
 
           <div className="grid grid-cols-2 gap-x-6 gap-y-8">
             {STATS.map((s) => (

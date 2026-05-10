@@ -50,13 +50,13 @@ export const Footer = () => {
         </div>
 
         <div className="md:col-span-3">
-          <p className="overline mb-5">Atelier</p>
+          <p className="text-[11px] tracking-[0.32em] uppercase font-medium text-[#BBD7FF] mb-5">Atelier</p>
           <p className="text-white/65 text-sm font-light leading-relaxed">
             Gwalior, Madhya Pradesh
             <br />
             India · 474001
           </p>
-          <p className="mt-8 overline mb-3">Trade</p>
+          <p className="mt-8 text-[11px] tracking-[0.32em] uppercase font-medium text-[#BBD7FF] mb-3">Trade</p>
           <a
             href="mailto:hello@icelab.in"
             className="text-white/65 hover:text-ice-primary text-sm font-light transition-colors"
@@ -70,7 +70,7 @@ export const Footer = () => {
         </div>
 
         <div className="md:col-span-4">
-          <p className="overline mb-5">Sitemap</p>
+          <p className="otext-[11px] tracking-[0.32em] uppercase font-medium text-[#BBD7FF] mb-5">Sitemap</p>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm font-light">
             {[
               ["About", "#about"],
@@ -93,7 +93,7 @@ export const Footer = () => {
           </ul>
 
           <div className="mt-10 p-6 border border-ice-border bg-[#0B111E]">
-            <p className="overline mb-2">Whisper Letter</p>
+            <p className="text-[11px] tracking-[0.32em] uppercase font-medium text-[#BBD7FF] mb-2">Whisper Letter</p>
             <p className="text-white/55 text-xs font-light leading-relaxed">
               Quiet dispatches on craftsmanship, bartender stories and limited
               releases. Sent only when worth your time.

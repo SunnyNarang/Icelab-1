@@ -63,9 +63,9 @@ export const Products = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="overline mb-8"
+           className="text-[11px] pb-8 tracking-[0.32em] uppercase font-medium text-[#BBD7FF]"
         >
-          The Collection · 02
+          The Collection
         </motion.p>
 
         <motion.h2

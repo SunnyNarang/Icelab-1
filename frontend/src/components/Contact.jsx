@@ -58,9 +58,9 @@ export const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="overline mb-8"
+             className="text-[11px] pb-8 tracking-[0.32em] uppercase font-medium text-[#BBD7FF]"
           >
-            Enquiries · 06
+            Enquiries
           </motion.p>
 
           <motion.h2
@@ -91,7 +91,7 @@ export const Contact = () => {
             >
               <Mail size={18} strokeWidth={1.25} className="text-ice-primary mt-0.5 shrink-0" />
               <div>
-                <div className="overline mb-1 !text-white/40">Email</div>
+                <div className="text-[11px] tracking-[0.32em] uppercase font-medium text-[#BBD7FF !text-white/40">Email</div>
                 <div className="text-white/80 group-hover:text-ice-primary transition-colors">
                   hello@icelab.in
                 </div>
@@ -100,7 +100,7 @@ export const Contact = () => {
             <div className="flex items-start gap-4">
               <MapPin size={18} strokeWidth={1.25} className="text-ice-primary mt-0.5 shrink-0" />
               <div>
-                <div className="overline mb-1 !text-white/40">Atelier</div>
+                <div className="text-[11px] tracking-[0.32em] uppercase font-medium text-[#BBD7FF !text-white/40">Atelier</div>
                 <div className="text-white/80">Gwalior, India · Pan-India delivery</div>
               </div>
             </div>
@@ -114,7 +114,7 @@ export const Contact = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="overline block mb-3 !text-white/45">Name</label>
+              <label className="text-[11px] tracking-[0.32em] uppercase font-medium block mb-3 !text-white/45">Name</label>
               <input
                 required
                 disabled={status === "submitting"}
@@ -126,7 +126,7 @@ export const Contact = () => {
               />
             </div>
             <div>
-              <label className="overline block mb-3 !text-white/45">Email</label>
+              <label className="text-[11px] tracking-[0.32em] uppercase font-medium block mb-3 !text-white/45">Email</label>
               <input
                 required
                 type="email"
@@ -142,7 +142,7 @@ export const Contact = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="overline block mb-3 !text-white/45">
+              <label className="text-[11px] tracking-[0.32em] uppercase font-medium block mb-3 !text-white/45">
                 Company / Venue
               </label>
               <input
@@ -155,7 +155,7 @@ export const Contact = () => {
               />
             </div>
             <div>
-              <label className="overline block mb-3 !text-white/45">
+              <label className="text-[11px] tracking-[0.32em] uppercase font-medium block mb-3 !text-white/45">
                 Inquiry Type
               </label>
               <div className="relative">
@@ -182,7 +182,7 @@ export const Contact = () => {
           </div>
 
           <div>
-            <label className="overline block mb-3 !text-white/45">Message</label>
+            <label className="text-[11px] tracking-[0.32em] uppercase font-medium block mb-3 !text-white/45">Message</label>
             <textarea
               required
               disabled={status === "submitting"}

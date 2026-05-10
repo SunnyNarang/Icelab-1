@@ -25,18 +25,7 @@ export const Hero = () => {
 
       <div className="relative z-10 min-h-screen flex flex-col">
         <div className="flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-24 pb-12 lg:pb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-            data-testid="hero-overline"
-          >
-           <p className="text-[11px] tracking-[0.32em] uppercase font-medium text-[#BBD7FF]">
-  Pure · Cold · Clear
-</p>
-          </motion.div>
-
+         
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}

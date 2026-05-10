@@ -23,9 +23,9 @@ export const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="overline mb-8"
+             className="text-[11px] pb-8 tracking-[0.32em] uppercase font-medium text-[#BBD7FF]"
           >
-            Stories · 05
+            Stories
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 12 }}

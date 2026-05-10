@@ -28,9 +28,9 @@ export const Process = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="overline mb-8"
+           className="text-[11px] pb-8 tracking-[0.32em] uppercase font-medium text-[#BBD7FF]"
         >
-          Craftsmanship · 03
+          Craftsmanship
         </motion.p>
 
         <motion.h2
