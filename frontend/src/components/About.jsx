@@ -11,11 +11,11 @@ const STATS = [
 export const About = () => {
   return (
 <section
-  className="relative overflow-hidden py-24 lg:py-32 bg-fixed"
+  className="relative overflow-hidden py-24 lg:py-32 lg:bg-fixed"
   style={{
     backgroundImage: `url(${GLASS_CUBE})`,
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundPosition: "60% center",
   }}
 >
   {/* Dark cinematic overlay */}

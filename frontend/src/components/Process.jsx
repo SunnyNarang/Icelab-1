@@ -11,7 +11,7 @@ export const Process = () => {
     >
       {/* Splash atmospheric backdrop */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-100"
         style={{
           backgroundImage: `url(${ICE_SPLASH})`,
           backgroundRepeat: "no-repeat",

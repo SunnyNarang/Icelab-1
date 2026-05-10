@@ -33,7 +33,9 @@ export const Hero = () => {
             className="mb-8"
             data-testid="hero-overline"
           >
-            <p className="overline">Pure · Cold · Clear</p>
+           <p className="text-[11px] tracking-[0.32em] uppercase font-medium text-[#BBD7FF]">
+  Pure · Cold · Clear
+</p>
           </motion.div>
 
           <motion.h1
@@ -46,9 +48,27 @@ export const Hero = () => {
             Invisible
             <br />
             yet{" "}
-            <span className="italic font-extralight text-ice-primary">
-              extraordinary
-            </span>
+           <motion.span
+  className="italic font-extralight text-ice-primary inline-block"
+  style={{
+  filter: "drop-shadow(0 0 10px rgba(180,240,255,0.35))",
+}}
+  animate={{
+    textShadow: [
+      "0 0 4px rgba(180,240,255,0.15)",
+      "0 0 12px rgba(180,240,255,0.45)",
+      "0 0 6px rgba(180,240,255,0.22)",
+    ],
+    opacity: [0.92, 1, 0.95],
+  }}
+  transition={{
+    duration: 2.8,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+>
+  extraordinary
+</motion.span>
             <span className="text-ice-primary">.</span>
           </motion.h1>
 

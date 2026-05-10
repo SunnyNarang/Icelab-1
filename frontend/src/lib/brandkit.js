@@ -4,19 +4,19 @@ export const BRANDKIT =
 
 // 3x2 product photo sheet (uploaded by user) — 6 product photos
 export const PRODUCTS_SHEET =
-  "https://customer-assets.emergentagent.com/job_glowing-clarity/artifacts/flsryznu_ChatGPT%20Image%20May%209%2C%202026%20at%2002_17_11%20PM.png";
+  "/images/products.png";
 
 // Single hero cube
 export const HERO_CUBE =
-  "https://customer-assets.emergentagent.com/job_glowing-clarity/artifacts/x9chig5x_ChatGPT%20Image%20May%209%2C%202026%20at%2002_22_26%20PM.png";
+  "/images/herocube.png";
 
 // Glass with cube — about section
 export const GLASS_CUBE =
-  "https://customer-assets.emergentagent.com/job_glowing-clarity/artifacts/picvlqkw_ChatGPT%20Image%20May%209%2C%202026%20at%2002_23_56%20PM.png";
+  "/images/glasscube.png";
 
 // Splashing ice — process / atmospheric usage
 export const ICE_SPLASH =
-  "https://customer-assets.emergentagent.com/job_glowing-clarity/artifacts/13vhibxo_ChatGPT%20Image%20May%209%2C%202026%20at%2002_20_11%20PM.png";
+  "/images/splashcube.png";
 
 // 3x3 brand-kit tile crop helper
 export const tileBg = (col, row) => ({
@@ -52,4 +52,4 @@ export const TILES = {
 
 // Logo asset (no-text crystal mark on dark)
 export const LOGO_MARK =
-  "https://customer-assets.emergentagent.com/job_glowing-clarity/artifacts/vcfneyhx_with%20Dark%20Bg%20copy.png";
+  "/images/logoonly.png";
