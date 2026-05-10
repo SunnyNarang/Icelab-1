@@ -5,7 +5,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer
-      className="relative px-6 md:px-12 lg:px-20 py-20 lg:py-24 bg-[#060A12]"
+      className="relative px-6 md:px-12 lg:px-20 py-20 lg:py-24 bg-[#0D162A]"
       data-testid="footer"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 items-start">

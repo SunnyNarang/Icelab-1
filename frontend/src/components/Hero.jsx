@@ -19,6 +19,7 @@ export const Hero = () => {
     backgroundPosition: "85% bottom",
   }}
 />
+
       <div className="absolute inset-0 bg-gradient-to-r from-[#060A12]/95 via-[#060A12]/70 via-[55%] to-transparent" />
 
 <div className="absolute inset-0 bg-gradient-to-b from-[#060A12]/50 via-transparent to-[#060A12]" />
